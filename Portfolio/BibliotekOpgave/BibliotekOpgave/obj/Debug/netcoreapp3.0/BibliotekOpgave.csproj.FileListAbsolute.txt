@@ -1,0 +1,11 @@
+C:\GitHub\portfolio-Nautrup\Portfolio\BibliotekOpgave\BibliotekOpgave\bin\Debug\netcoreapp3.0\BibliotekOpgave.exe
+C:\GitHub\portfolio-Nautrup\Portfolio\BibliotekOpgave\BibliotekOpgave\bin\Debug\netcoreapp3.0\BibliotekOpgave.deps.json
+C:\GitHub\portfolio-Nautrup\Portfolio\BibliotekOpgave\BibliotekOpgave\bin\Debug\netcoreapp3.0\BibliotekOpgave.runtimeconfig.json
+C:\GitHub\portfolio-Nautrup\Portfolio\BibliotekOpgave\BibliotekOpgave\bin\Debug\netcoreapp3.0\BibliotekOpgave.runtimeconfig.dev.json
+C:\GitHub\portfolio-Nautrup\Portfolio\BibliotekOpgave\BibliotekOpgave\bin\Debug\netcoreapp3.0\BibliotekOpgave.dll
+C:\GitHub\portfolio-Nautrup\Portfolio\BibliotekOpgave\BibliotekOpgave\bin\Debug\netcoreapp3.0\BibliotekOpgave.pdb
+C:\GitHub\portfolio-Nautrup\Portfolio\BibliotekOpgave\BibliotekOpgave\obj\Debug\netcoreapp3.0\BibliotekOpgave.csprojAssemblyReference.cache
+C:\GitHub\portfolio-Nautrup\Portfolio\BibliotekOpgave\BibliotekOpgave\obj\Debug\netcoreapp3.0\BibliotekOpgave.AssemblyInfoInputs.cache
+C:\GitHub\portfolio-Nautrup\Portfolio\BibliotekOpgave\BibliotekOpgave\obj\Debug\netcoreapp3.0\BibliotekOpgave.AssemblyInfo.cs
+C:\GitHub\portfolio-Nautrup\Portfolio\BibliotekOpgave\BibliotekOpgave\obj\Debug\netcoreapp3.0\BibliotekOpgave.dll
+C:\GitHub\portfolio-Nautrup\Portfolio\BibliotekOpgave\BibliotekOpgave\obj\Debug\netcoreapp3.0\BibliotekOpgave.pdb
