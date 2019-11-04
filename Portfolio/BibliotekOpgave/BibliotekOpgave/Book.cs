@@ -7,27 +7,28 @@ namespace BibliotekOpgave
     class Book
     {
         public string bookTitle;
-        public int bookId;
+        public string author;
 
-        public Book(string bookTitle, int bookId)
+        public Book(string bookTitle, string author)
         {
             this.bookTitle = bookTitle;
-            this.bookId = bookId;
+            this.author = author;
+            numOfBooks += 1;
         }
 
         public void RentBook()
         {
-            
+            Console.WriteLine("{0} is rented!", bookTitle);
         }
 
         public void ReturnBook()
         {
 
         }
-
-        public void BorrowDetails()
+        static int numOfBooks = 0;
+        public static int GetNumOfBooks()
         {
-
+            return numOfBooks;
         }
     }
 }

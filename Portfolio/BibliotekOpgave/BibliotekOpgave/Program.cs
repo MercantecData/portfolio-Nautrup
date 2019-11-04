@@ -9,18 +9,10 @@ namespace BibliotekOpgave
 
         static void Main(string[] args)
         {
-            LoginExample();
-            //Test();   
+            
         }
 
-        static void AddBook()
-        {
-            Console.WriteLine("Book name : ");
-            string bookInput = Console.ReadLine();
-            bookList.Add(new Book(bookInput, 5));
-        }
-
-        static void LoginExample()
+        static void LoginSystem()
         {
             Console.WriteLine("Welcome, what is your password? : ");
             string password = Console.ReadLine();
@@ -28,6 +20,10 @@ namespace BibliotekOpgave
             {
                 Console.Clear();
                 LibraryMenu();
+            }
+            else
+            {
+                Console.WriteLine("Password was wrong");
             }
         }
 
@@ -46,7 +42,7 @@ namespace BibliotekOpgave
                 switch (input)
                 {
                     case 1:
-                        AddBook();
+                        //AddBook(); Add new book to the list
                         break;
                     case 2:
                         //Rent a book code
@@ -58,7 +54,7 @@ namespace BibliotekOpgave
                         //search for a book code
                         break;
                     case 5:
-                        AllBooks();
+                        AllBooks(); // print all current books out
                         break;
 
                     default:
@@ -70,15 +66,17 @@ namespace BibliotekOpgave
 
         static void AllBooks()
         {
-            bookList.Add(new Book("\nAnders And", 1));
-            bookList.Add(new Book("500 useless facts", 2));
-            bookList.Add(new Book("Magic for dummies", 3));
-            bookList.Add(new Book("How to drink water\n", 4));
+            Console.WriteLine();
+            bookList.Add(new Book("Anders And", ""));
+            bookList.Add(new Book("500 useless facts", ""));
+            bookList.Add(new Book("Magic for dummies", ""));
+            bookList.Add(new Book("How to drink water", ""));
 
             foreach (Book book in bookList)
             {
                 Console.WriteLine(book.bookTitle);
             }
+            Console.WriteLine("Total amount of books: {0}", Book.GetNumOfBooks());
         }
         //func and met
     }
