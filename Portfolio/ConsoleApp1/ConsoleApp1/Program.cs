@@ -6,19 +6,22 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Hello World!");
             ArrayCounter();
         }
 
-        static void ArrayCounter()
+        static int ArrayCounter()
         {
-            Console.WriteLine("Write a number : ");
+            Console.Write("Write a number : ");
             int input = int.Parse(Console.ReadLine());
-            int[] arrayCount = new int[input];
-            foreach (var number in arrayCount)
+            int[] intArray = new int[input];
+
+            int counter = 1;
+            while (counter <= intArray.Length)
             {
-                Console.WriteLine(number);
+                Console.WriteLine(counter);
+                counter += 1;
             }
+            return counter;
         }
     }
 }
