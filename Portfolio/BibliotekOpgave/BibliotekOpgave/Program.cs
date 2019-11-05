@@ -9,7 +9,14 @@ namespace BibliotekOpgave
 
         static void Main(string[] args)
         {
-            
+            //LoginSystem();
+            LibraryMenu();
+        }
+        
+        static void TestRentingAbook()
+        {
+            Book book = new Book("Peter Plys", "");
+            book.RentBook(7);
         }
 
         static void LoginSystem()
@@ -74,9 +81,9 @@ namespace BibliotekOpgave
 
             foreach (Book book in bookList)
             {
-                Console.WriteLine(book.bookTitle);
+                Console.WriteLine("{0}",book.bookTitle);
             }
-            Console.WriteLine("Total amount of books: {0}", Book.GetNumOfBooks());
+            Console.WriteLine("\nTotal amount of books: {0}", Book.GetNumOfBooks()); ;
         }
         //func and met
     }

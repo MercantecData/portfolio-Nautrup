@@ -8,6 +8,13 @@ namespace BibliotekOpgave
     {
         //public string libraryName;
         //public string libraryLocation;
-        //public List<Book> books;
+        public List<Book> books = new List<Book>();
+        
+        public void AddBook(Book book)
+        {
+            books.Add(book);
+        }
+
+        
     }
 }
