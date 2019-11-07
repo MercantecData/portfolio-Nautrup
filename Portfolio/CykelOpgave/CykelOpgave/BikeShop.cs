@@ -20,10 +20,15 @@ namespace CykelOpgave
 
         public List<string> GetAllBrands()
         {
+            
             List<string> brands = new List<string>();
+            
             foreach (Bike bike in bikeList)
             {
-                Console.WriteLine(bike.brand);
+                if (!brands.Contains(bike.brand))
+                {
+                    brands.Add(bike.brand);
+                }
             }
             return brands;
         }

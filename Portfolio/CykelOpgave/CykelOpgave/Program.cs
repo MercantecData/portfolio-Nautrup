@@ -22,8 +22,6 @@ namespace CykelOpgave
             SeldeCykler.AddBike(new Bike("Ikke en volvo", 11, "Metallic Blue", false));
             SeldeCykler.AddBike(new Bike("Dyt dyt", 11, "Graphite", false));
 
-
-
             
         }
 
