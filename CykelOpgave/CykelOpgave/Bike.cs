@@ -22,6 +22,11 @@ namespace CykelOpgave
             numOfbikes += 1;
         }
 
+        public string GetDescription()
+        {
+            return $"Mærke: {brand} Dæk: {wheelSize} Farve: {color} Med El-motor: {withMotor}";
+        }
+
         public int GetTotalAmountOfBikes()
         {
             return numOfbikes;

@@ -7,6 +7,7 @@ namespace CykelOpgave
     {
         static BikeShop JonasCykler = new BikeShop();
         static BikeShop SeldeCykler = new BikeShop();
+        static ShopOwner shopOwner = new ShopOwner();
 
         static void Main(string[] args)
         {
@@ -16,23 +17,65 @@ namespace CykelOpgave
             JonasCykler.AddBike(new Bike("Centurion", 24, "Yellow", true));
             JonasCykler.AddBike(new Bike("Giant", 10, "Purple", false));
             JonasCykler.AddBike(new Bike("Giant", 11, "Blue", false));
+            JonasCykler.AddBike(new Bike("Trek", 14, "Silver", false));
+            JonasCykler.AddBike(new Bike("Cube", 15, "Black", true));
 
             SeldeCykler.AddBike(new Bike("Uden sæde", 11, "Yellow", true));
             SeldeCykler.AddBike(new Bike("TooFast", 11, "White", false));
             SeldeCykler.AddBike(new Bike("Ikke en volvo", 11, "Metallic Blue", false));
             SeldeCykler.AddBike(new Bike("Dyt dyt", 11, "Graphite", false));
 
-            
+            //PrintBikeList();
+            //PrintBikesWithLargerWheels();
+            //PrintBikesWithSmallWheels();
+            //SearchForBike();
+        }
+
+        static void SearchForBike()
+        {
+            Console.Write("Hvilket mærke søger du : ");
+            string input = Console.ReadLine();
+            List<Bike> bikes = JonasCykler.SearchBikeBrand(input);
+            foreach (var bikeFound in bikes)
+            {
+                Console.WriteLine($"{bikeFound.GetDescription()}");
+            }
+        }
+
+        static void PrintBikesWithLargerWheels()
+        {
+            Console.Write("Størrelse på dæk: ");
+            double input = double.Parse(Console.ReadLine());
+            List<Bike> bikes = JonasCykler.ReturnBikeWithLargerWheels(input);
+            foreach (var wheelSize in bikes)
+            {
+               
+                Console.WriteLine($"Mærke: {wheelSize.brand}\nDæk: {wheelSize.wheelSize} Tommer");
+                Console.WriteLine("------------------------------------------------------");
+                
+            }
+        }
+
+        static void PrintBikesWithSmallWheels()
+        {
+            Console.Write("Størrelse på dæk : ");
+            double input = double.Parse(Console.ReadLine());
+            List<Bike> bikes = JonasCykler.ReturnBikeWithSmallerWheels(input);
+            foreach (var wheelSize in bikes)
+            {
+                Console.WriteLine($"Mærke: {wheelSize.brand}\nDæk: {wheelSize.wheelSize} Tommer");
+                Console.WriteLine("------------------------------------------------------");
+            }
         }
 
         static void PrintBikeList()
         {
-            Console.WriteLine("All brands available:");
+            Console.WriteLine("All mærker tilgengæelig: ");
             List<string> brands = JonasCykler.GetAllBrands();
 
-            foreach (var str in brands)
+            foreach (var brand in brands)
             {
-                Console.WriteLine(str);
+                Console.WriteLine(brand);
             }
         }
     }
