@@ -1,29 +1,47 @@
 <!DOCTYPE html>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script type="text/javascript" src="javascript.js" async></script>
+	<title>Min side</title>
+</head>
+
+<body>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="styles.css">
-<title>Min side</title>
-</head>
-<body>
 
-<h1>Jonas R Johansen</h1>
-<h2>Velkommen</h2>
+<ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#about">Contact</a></li>
+</ul>
+
+<h2 class="margin">Velkommen</h2>
 <img src="https://www.snoghoj.dk/wp-content/uploads/2019/09/placeholder-image.png" alt="Mig" width="200">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pellentesque nisl lobortis maximus commodo. Nulla et bibendum eros, in cursus augue. Duis lacus purus, euismod lobortis nisl non, malesuada aliquam erat. Praesent maximus venenatis sem, sit amet dictum lectus bibendum sed.</p>
-<p> Aliquam feugiat efficitur consequat. Maecenas congue laoreet turpis et scelerisque. Sed molestie massa ut velit aliquam accumsan. Fusce molestie enim ut orci cursus cursus. Donec nisi odio, tincidunt eget nisl consectetur, maximus vulputate odio. Nunc at magna at mi sodales laoreet.</p>
+<p id="meText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pellentesque nisl lobortis maximus commodo. Nulla et bibendum eros, in cursus augue. Duis lacus purus, euismod lobortis nisl non, malesuada aliquam erat. Praesent maximus venenatis sem, sit amet dictum lectus bibendum sed.</p>
+
+<button onclick="ChangeMeText()">WTF?</button>
+<hr>
+
+<h1>Opgaver </h1>
+
+<button id="demo" onclick="ChangeButtonText()">Tryk her!</button>
+
+<p id="newElement"></p>
+
+<button id="btnRemove" onclick="RemoveElement()">Remove me pls</button>
+
+<p id="fruitArray"></p>
 
 <hr>
 
-<h1>Portfolio</h1>
+<h1 >Portfolio</h1>
 <h3>Læreplads</h3>
-<img src="https://nrvosborg.dk/wp-content/uploads/2019/06/thise-mejeri-logo.jpg" width="250">
+<img src="http://www.pmw-engineering.com/wp-content/uploads/2017/09/thise-logo-tagline-dark-2.png" width="250" height="70">
 <p>Jeg er elev hos Thise Mejeri</p> 
-<a href="https://www.thise.dk">Thise Mejeri</a>
+<a class="meLink" href="https://www.thise.dk">Thise Mejeri</a>
 
 <h3>Skole</h3>
 <img src="https://www.mercantec.dk/sites/mercantec.dk/files/styles/basic_content_spot/public/2019-02/Mercantec-LOGO-bred-sort.png?itok=iHmK9xQ1" width="250">
 <p>Jeg går på Mercantec i Viborg</p>
-<a href="https://www.Mercantec.dk">Mercantec</a>
+<a class="meLink" href="https://www.Mercantec.dk">Mercantec</a>
 
 </body>
 </html>

@@ -1,3 +1,40 @@
-a {
-	font-size: 15px;
+body {
+	background-color: powderblue;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block; 
+  color: white;
+  text-align: center; 
+  padding: 15px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #911;
+}
+
+a.meLink {
+	font-size: 20px;
+	color: blue;
+	text-decoration: none;
+}
+
+.knap {
+	background-color: pink;
+	display: inline;
+	border: 1px solid black;
+	border-radius: 2px;
 }
