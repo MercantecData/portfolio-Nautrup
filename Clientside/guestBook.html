@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="javascript.js" async></script>
+	<title>Guestbook</title>
+</head>
+
+<body>
+<html>
+<head>
+
+<div class="grid">
+	<div class="header">Guestbook</div>
+	
+	<div class="content">
+		  <div class="guestForm">
+			  Email:<input id="tbGuestEmail" type="email" name="email" required title="Valid email required" required>
+			  <br>
+			  Navn:<input id="tbGuestName" type="text" name="name" required title="Letters only and at least 4 characters" required>
+			  <br>
+			  <p>Besked:</p>
+			  <textarea id="tbGuestMessage" name="message" cols="40" rows="10"></textarea>
+			  <br>
+			  <button onclick="MakeElementWithTextBox()">Opret</button>
+			  <hr>
+			  <p id="printTbName"></p>
+		</div>
+	</div>
+	
+	<div class="footer">Footer</div>
+	
+	<div class="sidebar">
+		<a href="\GitHub\portfolio-Nautrup\Clientside\index.html">Home</a>
+		<a href="#home">Contact</a>
+
+	</div>
+</div>
+
+</body>
+</html>

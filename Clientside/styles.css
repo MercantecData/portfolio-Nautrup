@@ -1,29 +1,5 @@
 body {
-	background-color: powderblue;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0px;
-  padding: 0px;
-  overflow: hidden;
-  background-color: #333333;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block; 
-  color: white;
-  text-align: center; 
-  padding: 15px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: #911;
+	background-color: white;
 }
 
 a.meLink {
@@ -38,3 +14,69 @@ a.meLink {
 	border: 1px solid black;
 	border-radius: 2px;
 }
+
+.guestBookLink {
+	text-decoration: none;
+	font-size: 30px;
+	background-color:#815de3 ;
+	color: #ffafab;
+	border-style: outset;
+
+}
+
+.guestBookLink :hover {
+	background-color: black;
+}
+
+/* GUESTBOOK */
+.grid {
+	display: grid;
+	grid-template-columns: 100px auto;
+	grid-template-rows: 50px auto auto;
+	grid-template-areas: "header header" "sidebar content" "sidebar footer";
+}
+.header {
+	font-family: impact;
+	border: 1px solid black;
+	text-align: center;
+	font-size: 40px;
+	grid-area: header;
+}
+
+.content {
+	grid-area: content;
+}
+
+.footer {
+	grid-area: footer;
+	border: 1px solid black;
+}
+
+.sidebar {
+	grid-area: sidebar;
+	text-align: center;
+	column-span: 3;
+		background-color: #5b5c5b; 
+}
+/* Sidebar links styling */
+.sidebar a {
+	text-decoration: none;
+	color: white;
+	font-size: 25px;
+	overflow: hidden;
+}
+
+.sidebar a:hover {
+	background-color: #34eba8;
+}
+
+.guestForm {
+	font-size: 20px;
+	margin: 10px;
+	text-align: center;
+}
+
+#tbGuestMessage {
+	width: 70%;
+}
+
