@@ -1,0 +1,138 @@
+===Database driftserver
+
+== Struktur-dump for tabellen address
+
+|------
+|Kolonne|Datatype|Nulværdi|Standardværdi
+|------
+|//**id**//|int(11)|Nej|
+|address|varchar(150)|Nej|
+|zipCode|int(11)|Nej|
+|userId|int(11)|Ja|NULL
+|city|varchar(150)|Ja|NULL
+|country|varchar(200)|Ja|NULL
+== Data dump for tabellen address
+
+|1|Nautrup|7870|1|Nautrup|Denmark
+|2|Skvatnavlevej|8860|2|Pikheden|Danmark
+|3|Gedvej|1337|3|Buk|Letland
+|4|Trælsvej|1234|4|Trælsby|MegaTræls
+|5|Humlevej|7800|5|Skive|Danmark
+|6|Bodelvej|6969|6|Breum|Norge
+|7|Bolsjevej|1111|7|Skave|Tyskland
+|8|Envej|1234|8|Enby|Etland
+|9|Æbleskivevej|6666|9|Tokyo|Japan
+== Stand-in-struktur for visning getallnames
+
+|------
+|Kolonne|Datatype|Nulværdi|Standardværdi
+|------
+|name|varchar(150)|Nej|
+== Stand-in-struktur for visning getnameandorder
+
+|------
+|Kolonne|Datatype|Nulværdi|Standardværdi
+|------
+|name|varchar(150)|Nej|
+|orderId|int(11)|Nej|0
+== Stand-in-struktur for visning getproductorderid
+
+|------
+|Kolonne|Datatype|Nulværdi|Standardværdi
+|------
+|orderId|int(11)|Nej|0
+|prod_name|varchar(255)|Ja|NULL
+== Stand-in-struktur for visning getusersaddress
+
+|------
+|Kolonne|Datatype|Nulværdi|Standardværdi
+|------
+|Navn|varchar(150)|Nej|
+|Adresse|varchar(150)|Nej|
+|By|varchar(150)|Ja|NULL
+== Struktur-dump for tabellen orders
+
+|------
+|Kolonne|Datatype|Nulværdi|Standardværdi
+|------
+|//**orderId**//|int(11)|Nej|
+|userId|int(11)|Nej|
+|prop_Id|int(11)|Nej|
+|address_Id|int(11)|Nej|
+== Data dump for tabellen orders
+
+|1|1|1|1
+|2|2|2|2
+|3|3|3|3
+|4|4|1|4
+|5|4|2|4
+== Struktur-dump for tabellen product
+
+|------
+|Kolonne|Datatype|Nulværdi|Standardværdi
+|------
+|//**id**//|int(11)|Nej|
+|prod_name|varchar(255)|Ja|NULL
+|prod_description|varchar(255)|Ja|NULL
+|prod_stock|int(11)|Ja|NULL
+|prod_price|int(11)|Ja|NULL
+== Data dump for tabellen product
+
+|1|Svampe|sundt og inhalere|5|150
+|2|Søren Ryges Pibe|God sovset pibe|1|5000
+|3|Gravid Øldåse|Tom øldåse med lidt humle rester i bunden|1|3000
+|4|Optøet Snebold|Det bare vand|2|25
+|5|Søren Ryges Autograf|Ja... Den er falsk.|1|10000
+|6|Lille Dildo|Kun brugt en gang!|2|349
+|7|7 Små dværge|OBS Snehvide medfølger ikke!|1|35000
+|8|Vandtørrede Regndråber|Vådt i tør sovepose|100|10
+|9|Mickeys Klubhus|Uden tvivl den ringeste ting på siden|1|600
+|10|Cykel uden pedaler|Kører stærk med lidt hjemve|2|2000
+== Struktur-dump for tabellen users
+
+|------
+|Kolonne|Datatype|Nulværdi|Standardværdi
+|------
+|//**id**//|int(11)|Nej|
+|name|varchar(150)|Nej|
+|email|varchar(150)|Nej|
+|last_name|varchar(255)|Ja|NULL
+== Data dump for tabellen users
+
+|1|Søren|sørenRyge@gmail.com|Ryge
+|2|Anton|xXxDragonslayerxXx@yahoo.com|Hemmeligven
+|3|Mads|vindruer420@live.dk|Træsko
+|4|TornadoTorben|randomEmail@potterogplanter.xD|Gunker
+|5|Fjeder|bajer@stifter.øl|Forklarer
+|6|Svampeeksperten|svampefar@flue.svamp|Frønser
+|7|Bente|BenteFraKommunen@skive.dk|TrælsType
+|8|Lars Landkort|skodNavn@øv.dk|Lem
+|9|Qwerty|Qwerty@ytrewq.gg|Huggeren
+== Struktur for visning getallnames
+
+|------
+|Kolonne|Datatype|Nulværdi|Standardværdi
+|------
+|name|varchar(150)|Nej|
+== Struktur for visning getnameandorder
+
+|------
+|Kolonne|Datatype|Nulværdi|Standardværdi
+|------
+|name|varchar(150)|Nej|
+|orderId|int(11)|Nej|0
+== Struktur for visning getproductorderid
+
+|------
+|Kolonne|Datatype|Nulværdi|Standardværdi
+|------
+|orderId|int(11)|Nej|0
+|prod_name|varchar(255)|Ja|NULL
+== Struktur for visning getusersaddress
+
+|------
+|Kolonne|Datatype|Nulværdi|Standardværdi
+|------
+|Navn|varchar(150)|Nej|
+|Adresse|varchar(150)|Nej|
+|By|varchar(150)|Ja|NULL

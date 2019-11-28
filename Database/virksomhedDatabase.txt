@@ -1,0 +1,30 @@
+CREATE TABLE employee (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+first_name VARCHAR(30) NOT NULL,
+last_name VARCHAR(50) NOT NULL,
+email VARCHAR(100) NOT NULL,
+hire_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+INSERT INTO employee (first_name, last_name, email, hire_date) VALUES
+("TotalTyk","Thomsen","TotalTykThomsen@firmaemail.com", CURRENT_TIMESTAMP),
+("Al","Zeimers","AlZeimers@firmaemail.com", CURRENT_TIMESTAMP),
+("Dee","End","DeeEnd@firmaemail.com", CURRENT_TIMESTAMP),
+("Swallow","Maikuk","SM@firmaemail.com", CURRENT_TIMESTAMP),
+("John","Duedreng","JohnDuedreng@firmaemail.com", CURRENT_TIMESTAMP);
+
+CREATE TABLE department (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+employee_Id INT not NULL,
+dep_name varchar(50) NOT NULL
+);
+
+INSERT INTO department (dep_name) VALUES 
+("IT Afdeling"),
+("Administration"),
+("Tapperi");
+
+CREATE TABLE dep_manager (department_id INT,
+employee_id INT) ;
+
+CREATE TABLE salary(id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+employee_Id INT NOT NULL,
+salary INT);
