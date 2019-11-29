@@ -13,18 +13,67 @@ INSERT INTO employee (first_name, last_name, email, hire_date) VALUES
 ("John","Duedreng","JohnDuedreng@firmaemail.com", CURRENT_TIMESTAMP);
 
 CREATE TABLE department (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-employee_Id INT not NULL,
 dep_name varchar(50) NOT NULL
 );
 
 INSERT INTO department (dep_name) VALUES 
 ("IT Afdeling"),
 ("Administration"),
-("Tapperi");
+("Tapperi"),
+("Kølelager");
 
-CREATE TABLE dep_manager (department_id INT,
-employee_id INT) ;
+CREATE TABLE dep_manager (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+department_Id INT,
+employee_Id INT);
+
+ALTER TABLE dep_manager 
+ADD FOREIGN KEY (department_Id) REFERENCES department(id),
+ADD FOREIGN KEY (employee_Id) REFERENCES employee(id);
+
+
+CREATE TABLE dep_employee (id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+employee_Id INT,
+department_Id INT);
+
+ALTER TABLE dep_employee 
+ADD FOREIGN KEY (department_Id) REFERENCES department(id),
+ADD FOREIGN KEY (employee_Id) REFERENCES employee(id);
+
 
 CREATE TABLE salary(id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 employee_Id INT NOT NULL,
 salary INT);
+
+CREATE TABLE titles (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+employee_Id int NOT NULL,
+salary INT);
+
+ALTER TABLE titles 
+ADD FOREIGN KEY (employee_Id) REFERENCES employee(id);
+
+--------------------------------------------------------------------------------
+
+DELIMITER $$
+CREATE PROCEDURE GetNameAndJobTitel()
+BEGIN
+SELECT CONCAT (employee.first_name, ' ', employee.last_name) As Navn, titles.title AS JobTitel FROM employee 
+INNER JOIN titles 
+ON employee.id = titles.employee_Id ;
+End $$
+DELIMITER ;
+
+/* */
+
+DELIMITER $$
+
+CREATE PROCEDURE GetNameAndDepartment()
+BEGIN
+	SELECT CONCAT (employee.first_name,' ', employee.last_name) AS Navn, department.dep_name FROM employee
+    INNER JOIN dep_employee
+    ON employee.id = dep_employee.id ;
+END $$
+
+DELIMITER ;
+
+
+--------------------------------------------------------------------------------
