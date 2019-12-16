@@ -53,15 +53,6 @@ ADD FOREIGN KEY (employee_Id) REFERENCES employee(id);
 
 --------------------------------------------------------------------------------
 
-DELIMITER $$
-CREATE PROCEDURE GetNameAndJobTitel()
-BEGIN
-SELECT CONCAT (employee.first_name, ' ', employee.last_name) As Navn, titles.title AS JobTitel FROM employee 
-INNER JOIN titles 
-ON employee.id = titles.employee_Id ;
-End $$
-DELIMITER ;
-
 /* */
 
 DELIMITER $$
