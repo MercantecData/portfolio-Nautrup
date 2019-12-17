@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace MadplanProjekt
 {
-    class Dish
+    class Dessert
     {
         public string name;
-        public List<Ingrediens> Ingrediens;
+        public List<Ingrediens> ingrediens;
 
-        public Dish(string name, List<Ingrediens> ingrediens)
+        public Dessert(string name, List<Ingrediens> ingrediens)
         {
             this.name = name;
-            Ingrediens = ingrediens;
+            this.ingrediens = ingrediens;
         }
     }
 }

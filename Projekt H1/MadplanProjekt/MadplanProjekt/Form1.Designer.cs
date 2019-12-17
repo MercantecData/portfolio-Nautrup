@@ -48,10 +48,7 @@
             this.lSunday = new System.Windows.Forms.Label();
             this.bCreatePlan = new System.Windows.Forms.Button();
             this.bCreateShoppingList = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.cbDessert = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rtbMenuBox = new System.Windows.Forms.RichTextBox();
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
@@ -64,10 +61,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(511, 36);
+            this.label1.Font = new System.Drawing.Font("Snap ITC", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(491, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(240, 31);
+            this.label1.Size = new System.Drawing.Size(384, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ugentlig Madplan";
             // 
@@ -89,7 +86,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1313, 100);
+            this.panel1.Size = new System.Drawing.Size(1354, 100);
             this.panel1.TabIndex = 2;
             // 
             // pictureBox1
@@ -236,90 +233,56 @@
             // bCreatePlan
             // 
             this.bCreatePlan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bCreatePlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCreatePlan.Location = new System.Drawing.Point(1089, 416);
+            this.bCreatePlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCreatePlan.Location = new System.Drawing.Point(1106, 416);
             this.bCreatePlan.Name = "bCreatePlan";
             this.bCreatePlan.Size = new System.Drawing.Size(191, 58);
             this.bCreatePlan.TabIndex = 3;
             this.bCreatePlan.Text = "Lav madplan";
             this.bCreatePlan.UseVisualStyleBackColor = true;
+            this.bCreatePlan.Click += new System.EventHandler(this.bCreatePlan_Click);
             // 
             // bCreateShoppingList
             // 
             this.bCreateShoppingList.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bCreateShoppingList.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCreateShoppingList.Location = new System.Drawing.Point(892, 416);
+            this.bCreateShoppingList.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCreateShoppingList.Location = new System.Drawing.Point(909, 416);
             this.bCreateShoppingList.Name = "bCreateShoppingList";
             this.bCreateShoppingList.Size = new System.Drawing.Size(191, 58);
             this.bCreateShoppingList.TabIndex = 3;
-            this.bCreateShoppingList.Text = "Indkøbs liste";
+            this.bCreateShoppingList.Text = "Lav indkøbsliste";
             this.bCreateShoppingList.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // cbDessert
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(26, 39);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(85, 24);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Vegetar";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(26, 129);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(56, 24);
-            this.checkBox2.TabIndex = 4;
-            this.checkBox2.Text = "Kød";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(26, 99);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(74, 24);
-            this.checkBox3.TabIndex = 4;
-            this.checkBox3.Text = "Doven";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(26, 69);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(152, 24);
-            this.checkBox4.TabIndex = 4;
-            this.checkBox4.Text = "Den gyldne måge";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.cbDessert.AutoSize = true;
+            this.cbDessert.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDessert.Location = new System.Drawing.Point(26, 39);
+            this.cbDessert.Name = "cbDessert";
+            this.cbDessert.Size = new System.Drawing.Size(98, 24);
+            this.cbDessert.TabIndex = 4;
+            this.cbDessert.Text = "Desserter";
+            this.cbDessert.UseVisualStyleBackColor = true;
+            this.cbDessert.CheckedChanged += new System.EventHandler(this.cbDessert_CheckedChanged);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.checkBox4);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.checkBox2);
+            this.groupBox1.Controls.Add(this.cbDessert);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(892, 226);
+            this.groupBox1.Location = new System.Drawing.Point(909, 226);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(388, 173);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Sortering";
+            this.groupBox1.Text = "Vis";
             // 
             // rtbMenuBox
             // 
             this.rtbMenuBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtbMenuBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbMenuBox.Location = new System.Drawing.Point(402, 226);
+            this.rtbMenuBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbMenuBox.Location = new System.Drawing.Point(405, 312);
             this.rtbMenuBox.Name = "rtbMenuBox";
-            this.rtbMenuBox.Size = new System.Drawing.Size(480, 248);
+            this.rtbMenuBox.Size = new System.Drawing.Size(480, 162);
             this.rtbMenuBox.TabIndex = 6;
             this.rtbMenuBox.Text = "";
             // 
@@ -327,7 +290,7 @@
             // 
             this.monthCalendar.CalendarDimensions = new System.Drawing.Size(2, 1);
             this.monthCalendar.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
-            this.monthCalendar.Location = new System.Drawing.Point(9, 312);
+            this.monthCalendar.Location = new System.Drawing.Point(12, 312);
             this.monthCalendar.Name = "monthCalendar";
             this.monthCalendar.ShowWeekNumbers = true;
             this.monthCalendar.TabIndex = 7;
@@ -336,7 +299,7 @@
             // 
             this.lTotalAmountOfDishes.AutoSize = true;
             this.lTotalAmountOfDishes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTotalAmountOfDishes.Location = new System.Drawing.Point(78, 243);
+            this.lTotalAmountOfDishes.Location = new System.Drawing.Point(78, 226);
             this.lTotalAmountOfDishes.Name = "lTotalAmountOfDishes";
             this.lTotalAmountOfDishes.Size = new System.Drawing.Size(136, 25);
             this.lTotalAmountOfDishes.TabIndex = 1;
@@ -347,7 +310,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1313, 497);
+            this.ClientSize = new System.Drawing.Size(1354, 497);
             this.Controls.Add(this.monthCalendar);
             this.Controls.Add(this.rtbMenuBox);
             this.Controls.Add(this.lTotalAmountOfDishes);
@@ -374,7 +337,8 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Madplan";
+            this.Text = "Madplan Program";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -405,10 +369,7 @@
         private System.Windows.Forms.Label lSunday;
         private System.Windows.Forms.Button bCreatePlan;
         private System.Windows.Forms.Button bCreateShoppingList;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox cbDessert;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.RichTextBox rtbMenuBox;
