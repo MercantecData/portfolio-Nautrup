@@ -53,6 +53,7 @@
             this.rtbMenuBox = new System.Windows.Forms.RichTextBox();
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.lTotalAmountOfDishes = new System.Windows.Forms.Label();
+            this.lDessert = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -299,11 +300,21 @@
             // 
             this.lTotalAmountOfDishes.AutoSize = true;
             this.lTotalAmountOfDishes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTotalAmountOfDishes.Location = new System.Drawing.Point(78, 226);
+            this.lTotalAmountOfDishes.Location = new System.Drawing.Point(81, 226);
             this.lTotalAmountOfDishes.Name = "lTotalAmountOfDishes";
             this.lTotalAmountOfDishes.Size = new System.Drawing.Size(136, 25);
             this.lTotalAmountOfDishes.TabIndex = 1;
             this.lTotalAmountOfDishes.Text = "Antal retter:";
+            // 
+            // lDessert
+            // 
+            this.lDessert.AutoSize = true;
+            this.lDessert.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lDessert.Location = new System.Drawing.Point(816, 185);
+            this.lDessert.Name = "lDessert";
+            this.lDessert.Size = new System.Drawing.Size(151, 20);
+            this.lDessert.TabIndex = 1;
+            this.lDessert.Text = "Dessert placeholder";
             // 
             // Form1
             // 
@@ -320,6 +331,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lSunday);
             this.Controls.Add(this.lSaturday);
+            this.Controls.Add(this.lDessert);
             this.Controls.Add(this.lFriday);
             this.Controls.Add(this.lThursday);
             this.Controls.Add(this.lWensday);
@@ -375,6 +387,7 @@
         private System.Windows.Forms.RichTextBox rtbMenuBox;
         private System.Windows.Forms.MonthCalendar monthCalendar;
         private System.Windows.Forms.Label lTotalAmountOfDishes;
+        private System.Windows.Forms.Label lDessert;
     }
 }
 

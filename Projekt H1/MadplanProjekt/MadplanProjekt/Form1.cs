@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,13 +16,14 @@ namespace MadplanProjekt
     {
         List<Dish> allDishes = new List<Dish>();
         List<Dessert> allDesserts = new List<Dessert>();
+        List<Dish> dishesForTheWeek = new List<Dish>();
         Random chooseDish = new Random();
         
         public Form1()
         {
             InitializeComponent();
         }
-      
+        //Methods and functions
         private List<Dish> GetDishData()
         {
             List<Dish> localList = new List<Dish>();
@@ -159,35 +161,53 @@ namespace MadplanProjekt
 
             return localList;
         }
-
-        private void CreateMealPlan()
+        
+        private void CreateWeeklyPlan()
         {
-            int randomDish = chooseDish.Next(0, allDishes.Count);   // gets a dish from allDishes
-            lMonday.Text = allDishes[randomDish].name;              // puts the name of the dish into label
-            allDishes.RemoveAt(randomDish);                         // removes it from the list, so it doesnt get choosen again in the same week.
+            int randomDish = chooseDish.Next(0, allDishes.Count);
+            int randomDessert = chooseDish.Next(0, allDesserts.Count);
 
+            //Monday
+            randomDish = chooseDish.Next(0, allDishes.Count);   // gets a dish from allDishes
+            lMonday.Text = allDishes[randomDish].name;          // puts the name into a label
+            dishesForTheWeek.Add(allDishes[randomDish]);        // add the chosen dish to a list of this weeks dishes
+            allDishes.RemoveAt(randomDish);                     // removes it from the list, so it wont be choosen again.
+
+            //Tuesday
             randomDish = chooseDish.Next(0, allDishes.Count);
             lTuesday.Text = allDishes[randomDish].name;
+            dishesForTheWeek.Add(allDishes[randomDish]);
             allDishes.RemoveAt(randomDish);
 
+            //Wensday
             randomDish = chooseDish.Next(0, allDishes.Count);
             lWensday.Text = allDishes[randomDish].name;
+            dishesForTheWeek.Add(allDishes[randomDish]);
             allDishes.RemoveAt(randomDish);
 
+            //Thursday
             randomDish = chooseDish.Next(0, allDishes.Count);
             lThursday.Text = allDishes[randomDish].name;
+            dishesForTheWeek.Add(allDishes[randomDish]);
             allDishes.RemoveAt(randomDish);
 
+            //Friday
             randomDish = chooseDish.Next(0, allDishes.Count);
             lFriday.Text = allDishes[randomDish].name;
+            lDessert.Text = allDesserts[randomDessert].name;
+            dishesForTheWeek.Add(allDishes[randomDish]);
             allDishes.RemoveAt(randomDish);
 
+            //Saturday
             randomDish = chooseDish.Next(0, allDishes.Count);
             lSaturday.Text = allDishes[randomDish].name;
+            dishesForTheWeek.Add(allDishes[randomDish]);
             allDishes.RemoveAt(randomDish);
 
+            //Sunday
             randomDish = chooseDish.Next(0, allDishes.Count);
             lSunday.Text = allDishes[randomDish].name;
+            dishesForTheWeek.Add(allDishes[randomDish]);
             allDishes.RemoveAt(randomDish);
         }
 
@@ -224,23 +244,29 @@ namespace MadplanProjekt
 
         private void CreateShoppingList()
         {
-
+            int counter = 1;
+            rtbMenuBox.Clear();
+            foreach (var dish in dishesForTheWeek)
+            {
+                rtbMenuBox.Text += "Dag: " + counter++ + " Ret: " + dish.name + "\n";    
+            }
+            dishesForTheWeek.Clear();
         }
 
-
+        //Buttons and Events
         private void bCreatePlan_Click(object sender, EventArgs e)
         {
             if (cbDessert.Checked)
             {
-                allDesserts = GetDessertData();
                 CreateDessertPlan();
+                allDesserts = GetDessertData();
             }
             else
             {
+                CreateWeeklyPlan();
                 allDishes = GetDishData(); //get all the dishes everytime button is pressed so we dont get an error.
-                CreateMealPlan();
+                CreateShoppingList();
             }
-            
         }
 
         private void cbDessert_CheckedChanged(object sender, EventArgs e)
@@ -253,9 +279,15 @@ namespace MadplanProjekt
         {
             allDishes = GetDishData();
             allDesserts = GetDessertData();
-            CreateMealPlan();
+            CreateWeeklyPlan();
+            dishesForTheWeek.Clear();
             rtbMenuBox.Text = "Her er ugens forslag til en madplan.\nEr du ikke tilfreds kan du trykke på 'Lav madplan' knappen, og få lavet en ny.";
             lTotalAmountOfDishes.Text = "Antal Retter: " + (allDishes.Count + allDesserts.Count);
+        }
+
+        private void bTest_Click(object sender, EventArgs e)
+        {
+            CreateShoppingList();
         }
     }
 }
