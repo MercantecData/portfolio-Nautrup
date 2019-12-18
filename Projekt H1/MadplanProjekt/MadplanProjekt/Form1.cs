@@ -23,6 +23,7 @@ namespace MadplanProjekt
         {
             InitializeComponent();
         }
+        
         //Methods and functions
         private List<Dish> GetDishData()
         {
@@ -48,21 +49,39 @@ namespace MadplanProjekt
 
             //Ja jeg blev doven og gad ikke sætte ingredienser ind på alle... Deal with it
             Dish pasta = new Dish("Pasta & Kødsovs", new List<Ingrediens>());
+            pasta.Ingrediens.Add(new Ingrediens("Pasta af egen valg", 7));
+            pasta.Ingrediens.Add(new Ingrediens("Oksekød", 25));
+            pasta.Ingrediens.Add(new Ingrediens("Hvidløg", 10));
+            pasta.Ingrediens.Add(new Ingrediens("Hakket tomater", 4));
             localList.Add(pasta);
 
             Dish taco = new Dish("Taco", new List<Ingrediens>());
+            taco.Ingrediens.Add(new Ingrediens("Oksekød", 25));
+            taco.Ingrediens.Add(new Ingrediens("Hvidløg", 10));
+            taco.Ingrediens.Add(new Ingrediens("Taco Skalder", 16));
+            taco.Ingrediens.Add(new Ingrediens("Hakket tomater", 4));
             localList.Add(taco);
 
             Dish kyllingRis = new Dish("Kylling m/ Ris", new List<Ingrediens>());
+            kyllingRis.Ingrediens.Add(new Ingrediens("Kyllingebryst", 25));
+            kyllingRis.Ingrediens.Add(new Ingrediens("Hvidløg", 10));
+            kyllingRis.Ingrediens.Add(new Ingrediens("Ris", 6));
             localList.Add(kyllingRis);
 
             Dish kartoffelMos = new Dish("Kartoffelmos", new List<Ingrediens>());
+            kartoffelMos.Ingrediens.Add(new Ingrediens("Kartoffler", 10));
+            kartoffelMos.Ingrediens.Add(new Ingrediens("Mælk", 8));
+            kartoffelMos.Ingrediens.Add(new Ingrediens("Smør", 10));
+            kartoffelMos.Ingrediens.Add(new Ingrediens("Kød af eget valg", 25));
             localList.Add(kartoffelMos);
 
             Dish Suppe = new Dish("Suppe", new List<Ingrediens>());
+            Suppe.Ingrediens.Add(new Ingrediens("Boullionterning af eget valg", 14));
+            Suppe.Ingrediens.Add(new Ingrediens("Suppe grøntsagsmix", 14));
             localList.Add(Suppe);
 
             Dish foraarsRuller = new Dish("Forårsruller", new List<Ingrediens>());
+            foraarsRuller.Ingrediens.Add(new Ingrediens("Forårsruller", 8));
             localList.Add(foraarsRuller);
 
             Dish steakDish = new Dish("Bøffer", new List<Ingrediens>());
@@ -165,13 +184,13 @@ namespace MadplanProjekt
         private void CreateWeeklyPlan()
         {
             int randomDish = chooseDish.Next(0, allDishes.Count);
-            int randomDessert = chooseDish.Next(0, allDesserts.Count);
+            //int randomDessert = chooseDish.Next(0, allDesserts.Count);
 
             //Monday
             randomDish = chooseDish.Next(0, allDishes.Count);   // gets a dish from allDishes
             lMonday.Text = allDishes[randomDish].name;          // puts the name into a label
             dishesForTheWeek.Add(allDishes[randomDish]);        // add the chosen dish to a list of this weeks dishes
-            allDishes.RemoveAt(randomDish);                     // removes it from the list, so it wont be choosen again.
+            allDishes.RemoveAt(randomDish);                     // removes it from the allDishes list, so it wont be choosen again.
 
             //Tuesday
             randomDish = chooseDish.Next(0, allDishes.Count);
@@ -194,7 +213,7 @@ namespace MadplanProjekt
             //Friday
             randomDish = chooseDish.Next(0, allDishes.Count);
             lFriday.Text = allDishes[randomDish].name;
-            lDessert.Text = allDesserts[randomDessert].name;
+            //lDessert.Text = allDesserts[randomDessert].name;
             dishesForTheWeek.Add(allDishes[randomDish]);
             allDishes.RemoveAt(randomDish);
 
@@ -242,7 +261,7 @@ namespace MadplanProjekt
             allDesserts.RemoveAt(randomDish);
         }
 
-        private void CreateShoppingList()
+        private void PrintWeeklyPlanToTextBox()
         {
             int counter = 1;
             rtbMenuBox.Clear();
@@ -250,6 +269,26 @@ namespace MadplanProjekt
             {
                 rtbMenuBox.Text += "Dag: " + counter++ + " Ret: " + dish.name + "\n";    
             }
+        } // Ikke i brug endnu
+
+        private void CreateShoppingList()
+        {
+            string path = @"Indkøbsliste.txt";
+            double totalPrice = 0;
+            StreamWriter shoppingList = new StreamWriter(path);
+
+            foreach (Dish dish in dishesForTheWeek)
+            {
+                shoppingList.WriteLine("Ret: " + dish.name + "\nIngredienser:");
+                for (int i = 0; i < dish.Ingrediens.Count; i++)
+                {
+                    shoppingList.WriteLine(dish.Ingrediens[i].name + " - " + dish.Ingrediens[i].price + " kr.");
+                    totalPrice += dish.Ingrediens[i].price;
+                }
+                shoppingList.WriteLine("-----------------------");
+            }
+            shoppingList.WriteLine("Pris for hele ugen : " + totalPrice + " kr.");
+            shoppingList.Close();
             dishesForTheWeek.Clear();
         }
 
@@ -258,21 +297,33 @@ namespace MadplanProjekt
         {
             if (cbDessert.Checked)
             {
-                CreateDessertPlan();
                 allDesserts = GetDessertData();
+                CreateDessertPlan();
+               
             }
             else
             {
-                CreateWeeklyPlan();
                 allDishes = GetDishData(); //get all the dishes everytime button is pressed so we dont get an error.
-                CreateShoppingList();
+                CreateWeeklyPlan();
+                //PrintWeeklyPlanToTextBox(); // prints the weekly plan out in the textbox
             }
         }
 
         private void cbDessert_CheckedChanged(object sender, EventArgs e)
         {
-            allDesserts = GetDessertData();
-            CreateDessertPlan();
+            if (cbDessert.Checked)
+            {
+                cbCheatDay.Enabled = false;
+                allDesserts = GetDessertData();
+                CreateDessertPlan();
+            }
+            else
+            {
+                cbCheatDay.Enabled = true;
+                allDishes = GetDishData();
+                CreateWeeklyPlan();
+            }
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -281,13 +332,26 @@ namespace MadplanProjekt
             allDesserts = GetDessertData();
             CreateWeeklyPlan();
             dishesForTheWeek.Clear();
-            rtbMenuBox.Text = "Her er ugens forslag til en madplan.\nEr du ikke tilfreds kan du trykke på 'Lav madplan' knappen, og få lavet en ny.";
+            rtbMenuBox.Text = "Dette er kun en lille hjælp til hvad du f.eks. kan lave af mad.\nDu er velkommen til at trykke på 'Lav madplan' knappen for at se hvordan en uge ellers kan se ud.";
             lTotalAmountOfDishes.Text = "Antal Retter: " + (allDishes.Count + allDesserts.Count);
         }
 
-        private void bTest_Click(object sender, EventArgs e)
+        private void cbCheatDay_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbCheatDay.Checked)
+            {
+                lDessert.Visible = true;
+            }
+            else
+            {
+                lDessert.Visible = false;
+            }
+        }
+
+        private void bCreateShoppingList_Click(object sender, EventArgs e)
         {
             CreateShoppingList();
         }
+
     }
 }

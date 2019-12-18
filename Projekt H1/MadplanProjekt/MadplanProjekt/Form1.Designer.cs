@@ -50,6 +50,7 @@
             this.bCreateShoppingList = new System.Windows.Forms.Button();
             this.cbDessert = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbCheatDay = new System.Windows.Forms.CheckBox();
             this.rtbMenuBox = new System.Windows.Forms.RichTextBox();
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.lTotalAmountOfDishes = new System.Windows.Forms.Label();
@@ -253,6 +254,7 @@
             this.bCreateShoppingList.TabIndex = 3;
             this.bCreateShoppingList.Text = "Lav indkøbsliste";
             this.bCreateShoppingList.UseVisualStyleBackColor = true;
+            this.bCreateShoppingList.Click += new System.EventHandler(this.bCreateShoppingList_Click);
             // 
             // cbDessert
             // 
@@ -260,14 +262,15 @@
             this.cbDessert.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDessert.Location = new System.Drawing.Point(26, 39);
             this.cbDessert.Name = "cbDessert";
-            this.cbDessert.Size = new System.Drawing.Size(98, 24);
+            this.cbDessert.Size = new System.Drawing.Size(121, 24);
             this.cbDessert.TabIndex = 4;
-            this.cbDessert.Text = "Desserter";
+            this.cbDessert.Text = "Vis desserter";
             this.cbDessert.UseVisualStyleBackColor = true;
             this.cbDessert.CheckedChanged += new System.EventHandler(this.cbDessert_CheckedChanged);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbCheatDay);
             this.groupBox1.Controls.Add(this.cbDessert);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(909, 226);
@@ -275,7 +278,19 @@
             this.groupBox1.Size = new System.Drawing.Size(388, 173);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Vis";
+            this.groupBox1.Text = "Andet";
+            // 
+            // cbCheatDay
+            // 
+            this.cbCheatDay.AutoSize = true;
+            this.cbCheatDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCheatDay.Location = new System.Drawing.Point(26, 69);
+            this.cbCheatDay.Name = "cbCheatDay";
+            this.cbCheatDay.Size = new System.Drawing.Size(143, 24);
+            this.cbCheatDay.TabIndex = 5;
+            this.cbCheatDay.Text = "Fredags snolder";
+            this.cbCheatDay.UseVisualStyleBackColor = true;
+            this.cbCheatDay.CheckedChanged += new System.EventHandler(this.cbCheatDay_CheckedChanged);
             // 
             // rtbMenuBox
             // 
@@ -300,7 +315,7 @@
             // 
             this.lTotalAmountOfDishes.AutoSize = true;
             this.lTotalAmountOfDishes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTotalAmountOfDishes.Location = new System.Drawing.Point(81, 226);
+            this.lTotalAmountOfDishes.Location = new System.Drawing.Point(81, 247);
             this.lTotalAmountOfDishes.Name = "lTotalAmountOfDishes";
             this.lTotalAmountOfDishes.Size = new System.Drawing.Size(136, 25);
             this.lTotalAmountOfDishes.TabIndex = 1;
@@ -309,12 +324,15 @@
             // lDessert
             // 
             this.lDessert.AutoSize = true;
+            this.lDessert.BackColor = System.Drawing.SystemColors.Control;
             this.lDessert.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lDessert.ForeColor = System.Drawing.SystemColors.WindowText;
             this.lDessert.Location = new System.Drawing.Point(816, 185);
             this.lDessert.Name = "lDessert";
             this.lDessert.Size = new System.Drawing.Size(151, 20);
             this.lDessert.TabIndex = 1;
             this.lDessert.Text = "Dessert placeholder";
+            this.lDessert.Visible = false;
             // 
             // Form1
             // 
@@ -388,6 +406,7 @@
         private System.Windows.Forms.MonthCalendar monthCalendar;
         private System.Windows.Forms.Label lTotalAmountOfDishes;
         private System.Windows.Forms.Label lDessert;
+        private System.Windows.Forms.CheckBox cbCheatDay;
     }
 }
 
