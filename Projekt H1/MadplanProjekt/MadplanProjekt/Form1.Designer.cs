@@ -55,6 +55,8 @@
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.lTotalAmountOfDishes = new System.Windows.Forms.Label();
             this.lDessert = new System.Windows.Forms.Label();
+            this.bOpenShoppingList = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -88,7 +90,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1354, 100);
+            this.panel1.Size = new System.Drawing.Size(1350, 100);
             this.panel1.TabIndex = 2;
             // 
             // pictureBox1
@@ -236,7 +238,7 @@
             // 
             this.bCreatePlan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bCreatePlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCreatePlan.Location = new System.Drawing.Point(1106, 416);
+            this.bCreatePlan.Location = new System.Drawing.Point(1129, 416);
             this.bCreatePlan.Name = "bCreatePlan";
             this.bCreatePlan.Size = new System.Drawing.Size(191, 58);
             this.bCreatePlan.TabIndex = 3;
@@ -248,7 +250,7 @@
             // 
             this.bCreateShoppingList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bCreateShoppingList.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCreateShoppingList.Location = new System.Drawing.Point(909, 416);
+            this.bCreateShoppingList.Location = new System.Drawing.Point(932, 416);
             this.bCreateShoppingList.Name = "bCreateShoppingList";
             this.bCreateShoppingList.Size = new System.Drawing.Size(191, 58);
             this.bCreateShoppingList.TabIndex = 3;
@@ -273,9 +275,9 @@
             this.groupBox1.Controls.Add(this.cbCheatDay);
             this.groupBox1.Controls.Add(this.cbDessert);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(909, 226);
+            this.groupBox1.Location = new System.Drawing.Point(1129, 313);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(388, 173);
+            this.groupBox1.Size = new System.Drawing.Size(191, 98);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Andet";
@@ -315,7 +317,7 @@
             // 
             this.lTotalAmountOfDishes.AutoSize = true;
             this.lTotalAmountOfDishes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTotalAmountOfDishes.Location = new System.Drawing.Point(81, 247);
+            this.lTotalAmountOfDishes.Location = new System.Drawing.Point(939, 310);
             this.lTotalAmountOfDishes.Name = "lTotalAmountOfDishes";
             this.lTotalAmountOfDishes.Size = new System.Drawing.Size(136, 25);
             this.lTotalAmountOfDishes.TabIndex = 1;
@@ -334,14 +336,38 @@
             this.lDessert.Text = "Dessert placeholder";
             this.lDessert.Visible = false;
             // 
+            // bOpenShoppingList
+            // 
+            this.bOpenShoppingList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bOpenShoppingList.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bOpenShoppingList.Location = new System.Drawing.Point(932, 346);
+            this.bOpenShoppingList.Name = "bOpenShoppingList";
+            this.bOpenShoppingList.Size = new System.Drawing.Size(191, 58);
+            this.bOpenShoppingList.TabIndex = 3;
+            this.bOpenShoppingList.Text = "Åben indkøbsliste";
+            this.bOpenShoppingList.UseVisualStyleBackColor = true;
+            this.bOpenShoppingList.Click += new System.EventHandler(this.bOpenShoppingList_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(414, 296);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(395, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Noter til indkøbslisten (Husk at skrive noten inden \"Lav indkøbsliste\" bliver try" +
+    "kket)\r\n";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1354, 497);
+            this.ClientSize = new System.Drawing.Size(1350, 497);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.monthCalendar);
             this.Controls.Add(this.rtbMenuBox);
+            this.Controls.Add(this.bOpenShoppingList);
             this.Controls.Add(this.lTotalAmountOfDishes);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bCreateShoppingList);
@@ -407,6 +433,8 @@
         private System.Windows.Forms.Label lTotalAmountOfDishes;
         private System.Windows.Forms.Label lDessert;
         private System.Windows.Forms.CheckBox cbCheatDay;
+        private System.Windows.Forms.Button bOpenShoppingList;
+        private System.Windows.Forms.Label label3;
     }
 }
 

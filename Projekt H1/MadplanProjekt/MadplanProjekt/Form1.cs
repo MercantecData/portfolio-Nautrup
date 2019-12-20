@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -18,7 +19,8 @@ namespace MadplanProjekt
         List<Dessert> allDesserts = new List<Dessert>();
         List<Dish> dishesForTheWeek = new List<Dish>();
         Random chooseDish = new Random();
-        
+        string path = @"Indkøbsliste.txt";
+
         public Form1()
         {
             InitializeComponent();
@@ -81,61 +83,104 @@ namespace MadplanProjekt
             localList.Add(Suppe);
 
             Dish foraarsRuller = new Dish("Forårsruller", new List<Ingrediens>());
-            foraarsRuller.Ingrediens.Add(new Ingrediens("Forårsruller", 8));
+            foraarsRuller.Ingrediens.Add(new Ingrediens("Forårsruller", 26));
             localList.Add(foraarsRuller);
 
             Dish steakDish = new Dish("Bøffer", new List<Ingrediens>());
+            steakDish.Ingrediens.Add(new Ingrediens("Oksekød 500g", 25));
+            steakDish.Ingrediens.Add(new Ingrediens("Løg", 10));
             localList.Add(steakDish);
 
             Dish dunser = new Dish("Frikadeller", new List<Ingrediens>());
+            dunser.Ingrediens.Add(new Ingrediens("Grisefars 500g", 25));
+            dunser.Ingrediens.Add(new Ingrediens("Løg", 10));
+            dunser.Ingrediens.Add(new Ingrediens("Mel", 10));
             localList.Add(dunser);
 
             Dish koteletterIFad = new Dish("Koteletter i fad", new List<Ingrediens>());
+            koteletterIFad.Ingrediens.Add(new Ingrediens("Koteletter", 25));
+            koteletterIFad.Ingrediens.Add(new Ingrediens("Hakket tomat", 4));
+            koteletterIFad.Ingrediens.Add(new Ingrediens("Hvidløg", 10));
             localList.Add(koteletterIFad);
 
             Dish bofStroganof = new Dish("Bøf Stroganoff", new List<Ingrediens>());
+            bofStroganof.Ingrediens.Add(new Ingrediens("Oksefillet", 25));
+            bofStroganof.Ingrediens.Add(new Ingrediens("Svampe", 7));
+            bofStroganof.Ingrediens.Add(new Ingrediens("Løg", 10));
             localList.Add(bofStroganof);
 
             Dish logtaerte = new Dish("Løgtærte", new List<Ingrediens>());
+            logtaerte.Ingrediens.Add(new Ingrediens("Tærtedej", 14));
+            logtaerte.Ingrediens.Add(new Ingrediens("Løg", 10));
+            logtaerte.Ingrediens.Add(new Ingrediens("Bacon", 15));
+            logtaerte.Ingrediens.Add(new Ingrediens("Peberfrugt", 10));
             localList.Add(logtaerte);
 
             Dish wokRet = new Dish("Wokret", new List<Ingrediens>());
+            wokRet.Ingrediens.Add(new Ingrediens("Put hvad du vil i. Wokretter smager altid godt", 50));
             localList.Add(wokRet);
             
-            Dish fishDish = new Dish("Fisk m. Ris", new List<Ingrediens>());
+            Dish fishDish = new Dish("Fiskfillet", new List<Ingrediens>());
+            fishDish.Ingrediens.Add(new Ingrediens("Fiskefillet", 32));
+            fishDish.Ingrediens.Add(new Ingrediens("Ris", 6));
             localList.Add(fishDish);
 
             Dish homemadePizza = new Dish("Hjemmelavet pizza", new List<Ingrediens>());
+            homemadePizza.Ingrediens.Add(new Ingrediens("Pizza dej", 14));
+            homemadePizza.Ingrediens.Add(new Ingrediens("Ost", 16));
+            homemadePizza.Ingrediens.Add(new Ingrediens("Valgfrie toppings", 40));
             localList.Add(homemadePizza);
 
-            Dish frikadeller = new Dish("Frikadeller", new List<Ingrediens>());
-            localList.Add(frikadeller);
-
             Dish kyllingFrikadeller = new Dish("Kyllinge Frikadeller", new List<Ingrediens>());
+            kyllingFrikadeller.Ingrediens.Add(new Ingrediens("Kyllingfars 500g", 25));
+            kyllingFrikadeller.Ingrediens.Add(new Ingrediens("Løg", 10));
+            kyllingFrikadeller.Ingrediens.Add(new Ingrediens("Hvidløg", 10));
             localList.Add(kyllingFrikadeller);
 
             Dish stegtflaesk = new Dish("Stegt Flæsk", new List<Ingrediens>());
+            stegtflaesk.Ingrediens.Add(new Ingrediens("Flæsk", 25));
+            stegtflaesk.Ingrediens.Add(new Ingrediens("Kartoffler", 10));
+            stegtflaesk.Ingrediens.Add(new Ingrediens("Persillesovs", 15));
             localList.Add(stegtflaesk);
             
             Dish sandwich = new Dish("Sandwich", new List<Ingrediens>());
+            sandwich.Ingrediens.Add(new Ingrediens("Bestem selv", 25));
             localList.Add(sandwich);
             
             Dish potatoSoup = new Dish("Kartoffel suppe", new List<Ingrediens>());
+            potatoSoup.Ingrediens.Add(new Ingrediens("Kartoffler", 25));
+            potatoSoup.Ingrediens.Add(new Ingrediens("Porre", 10));
+            potatoSoup.Ingrediens.Add(new Ingrediens("Boullion Grøntsags", 15));
             localList.Add(potatoSoup);
 
             Dish hamburgerryg = new Dish("Glaseret Hamburgerryg", new List<Ingrediens>());
+            hamburgerryg.Ingrediens.Add(new Ingrediens("Hamburgerryg", 35));
+            hamburgerryg.Ingrediens.Add(new Ingrediens("Din favorit marinade", 25));
+            hamburgerryg.Ingrediens.Add(new Ingrediens("Kartoffler", 15));
             localList.Add(hamburgerryg);
 
             Dish dish17 = new Dish("Æggekage m/ bacon", new List<Ingrediens>());
+            dish17.Ingrediens.Add(new Ingrediens("Æg", 35));
+            dish17.Ingrediens.Add(new Ingrediens("Bacon", 25));
+            dish17.Ingrediens.Add(new Ingrediens("Kartoffler & grøntsager", 15));
             localList.Add(dish17);
 
             Dish dish18 = new Dish("Ret 18", new List<Ingrediens>());
+            dish18.Ingrediens.Add(new Ingrediens("Ret 18", 35));
+            dish18.Ingrediens.Add(new Ingrediens("Ret 18", 25));
+            dish18.Ingrediens.Add(new Ingrediens("Ret 18", 15));
             localList.Add(dish18);
 
             Dish dish19 = new Dish("Ret 19", new List<Ingrediens>());
+            dish19.Ingrediens.Add(new Ingrediens("Ret 19", 35));
+            dish19.Ingrediens.Add(new Ingrediens("Ret 19", 25));
+            dish19.Ingrediens.Add(new Ingrediens("Ret 19", 15));
             localList.Add(dish19);
 
             Dish dish20 = new Dish("Ret 20", new List<Ingrediens>());
+            dish20.Ingrediens.Add(new Ingrediens("Ret 20", 35));
+            dish20.Ingrediens.Add(new Ingrediens("Ret 20", 25));
+            dish20.Ingrediens.Add(new Ingrediens("Ret 20", 15));
             localList.Add(dish20);
 
             return localList;
@@ -163,19 +208,20 @@ namespace MadplanProjekt
             dessert3.ingrediens.Add(new Ingrediens("Mælk", 8));
             localList.Add(dessert3);
 
-            Dessert dessert4 = new Dessert("Brombærkompot", new List<Ingrediens>());
-            dessert4.ingrediens.Add(new Ingrediens("Brombær", 20));
-            dessert4.ingrediens.Add(new Ingrediens("I dont know? sukker?", 23));
-            dessert4.ingrediens.Add(new Ingrediens("Mælk måske?", 8));
+            Dessert dessert4 = new Dessert("Bland selv slik", new List<Ingrediens>());
+            dessert4.ingrediens.Add(new Ingrediens("", 50));
             localList.Add(dessert4);
 
             Dessert dessert5 = new Dessert("Chokolademousse", new List<Ingrediens>());
             localList.Add(dessert5);
 
-            Dessert dessert6 = new Dessert("Frugtsalat", new List<Ingrediens>());
+            Dessert dessert6 = new Dessert("Brun sovs(Jyde dessert)", new List<Ingrediens>());
+            dessert6.ingrediens.Add(new Ingrediens("Spørg mor om hun ikke vil lave den", 0));
             localList.Add(dessert6);
 
             Dessert dessert7 = new Dessert("Banansplit", new List<Ingrediens>());
+            dessert7.ingrediens.Add(new Ingrediens("Banan", 2));
+            dessert7.ingrediens.Add(new Ingrediens("Is", 35));
             localList.Add(dessert7);
 
             return localList;
@@ -249,7 +295,7 @@ namespace MadplanProjekt
             allDesserts.RemoveAt(randomDish);
 
             randomDish = chooseDish.Next(0, allDesserts.Count);
-            lFriday.Text = allDesserts[randomDish].name;
+            lDessert.Text = allDesserts[randomDish].name;
             allDesserts.RemoveAt(randomDish);
 
             randomDish = chooseDish.Next(0, allDesserts.Count);
@@ -261,22 +307,12 @@ namespace MadplanProjekt
             allDesserts.RemoveAt(randomDish);
         }
 
-        private void PrintWeeklyPlanToTextBox()
-        {
-            int counter = 1;
-            rtbMenuBox.Clear();
-            foreach (var dish in dishesForTheWeek)
-            {
-                rtbMenuBox.Text += "Dag: " + counter++ + " Ret: " + dish.name + "\n";    
-            }
-        } // Ikke i brug endnu
-
         private void CreateShoppingList()
         {
-            string path = @"Indkøbsliste.txt";
+            
             double totalPrice = 0;
+            
             StreamWriter shoppingList = new StreamWriter(path);
-
             foreach (Dish dish in dishesForTheWeek)
             {
                 shoppingList.WriteLine("Ret: " + dish.name + "\nIngredienser:");
@@ -288,8 +324,12 @@ namespace MadplanProjekt
                 shoppingList.WriteLine("-----------------------");
             }
             shoppingList.WriteLine("Pris for hele ugen : " + totalPrice + " kr.");
+            shoppingList.WriteLine("-----------------------");
+            shoppingList.WriteLine("Noter:");
+            shoppingList.WriteLine(rtbMenuBox.Text);
             shoppingList.Close();
             dishesForTheWeek.Clear();
+            Process.Start(path);
         }
 
         //Buttons and Events
@@ -305,7 +345,6 @@ namespace MadplanProjekt
             {
                 allDishes = GetDishData(); //get all the dishes everytime button is pressed so we dont get an error.
                 CreateWeeklyPlan();
-                //PrintWeeklyPlanToTextBox(); // prints the weekly plan out in the textbox
             }
         }
 
@@ -314,6 +353,7 @@ namespace MadplanProjekt
             if (cbDessert.Checked)
             {
                 cbCheatDay.Enabled = false;
+                cbCheatDay.Checked = false;
                 allDesserts = GetDessertData();
                 CreateDessertPlan();
             }
@@ -332,7 +372,6 @@ namespace MadplanProjekt
             allDesserts = GetDessertData();
             CreateWeeklyPlan();
             dishesForTheWeek.Clear();
-            rtbMenuBox.Text = "Dette er kun en lille hjælp til hvad du f.eks. kan lave af mad.\nDu er velkommen til at trykke på 'Lav madplan' knappen for at se hvordan en uge ellers kan se ud.";
             lTotalAmountOfDishes.Text = "Antal Retter: " + (allDishes.Count + allDesserts.Count);
         }
 
@@ -353,5 +392,17 @@ namespace MadplanProjekt
             CreateShoppingList();
         }
 
+        private void bOpenShoppingList_Click(object sender, EventArgs e)
+        {
+            if (!File.Exists(path))
+            {
+                MessageBox.Show("Ingen indkøbsliste fundet.");
+            }
+            else
+            {
+                Process.Start(path);
+            }
+           
+        }
     }
 }
